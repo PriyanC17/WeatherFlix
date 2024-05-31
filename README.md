@@ -23,4 +23,4 @@ The Weather Forecast Application is a web-based tool that provides users with up
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/weather-forecast.git
+   git clone https://github.com/PriyanC17/WeatherFlix.git
