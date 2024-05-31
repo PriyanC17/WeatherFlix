@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "518a96eef01008d5b719fc4371b50bdc"
+API_KEY = "Your API Key"
 base_url = "https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={API_KEY}"
 
 layers = [
