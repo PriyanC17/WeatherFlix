@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .rmain{
+        display:flex;
+        padding:0 42px 23px;
+        margin:0 0 0 285px;
+        width:100px;
+    }
+    legend{
+        text-align:center;
+        font-size:1.87rem;
+        font-family:cursive;
+        color:#e2ff3b;
+    }
+    .rentity{
+        padding:4px 94px 32px 91px;
+        margin:3px 0 40px 0 ;
+        height:450px;
+        border:2px solid #081446;
+    }
+    .rblock{
+        height: 66px;
+        margin:10px 22px 7px 18px;
+    }
+    .rlabel{
+        font-size:1.47rem;
+        font-weight:600;
+        display:inline;
+        width:10.75rem;
+    }
+    .rinput{
+        height:1.75rem;
+        display:block;
+        width:20.75rem;c
+    }
+    .btn{
+        text-align:center;
+        margin:-16px 0 5px 0;
+        background-color:#9e6edd;
+        box-shadow: 0 70px 70px 1px hsla(0, 0%, 0%, 0.1);
+        border:none;
+        font-family:cursive;
+        color:white;
+        font-size:1.25rem;
+    }
+    small{
+        text-align:center;
+        border:none;
+        margin:-10px 20px 20px 450px;
+<!--        color:#e2ff3b;-->
+        color:#99a841;
+        background:none;
+        font-size:1.25rem;
+    }
+    .invalid-feedback {
+    <!--    display: none;-->
+        width: 100%;
+        margin-top: .25rem;
+        font-size: 80%;
+        color: #dc3545;
+    }
+
+
+
+</style>
+<div class="content-section rmain">
+    <!--For custom bootstrap form validation messaages,use novalidate boolean attribute to disable browser default feedback tooltips,
+    but still provides access to form validation APIs in JS-->
+    <form method="POST" action="" class="needs-validation" novalidate>
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group rentity">
+            <legend class="border-botton mb-4 ">Join Today</legend>
+            <div class="form-group rblock ">
+                {{ form.username.label(class="form-control-label form-control-lg rlabel") }}
+                {% if form.username.errors %}
+                {{ form.username(class="form-control form-control-lg is-invalid rinput .invad") }}
+                <div class="invalid-feedback .invad">
+                    {% for error in form.username.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.username(class="form-control form-control-lg rinput .invad") }}
+                {% endif %}
+
+            </div>
+
+            <div class="form-group rblock">
+                {{ form.email.label(class="form-control-label rlabel") }}
+                {% if form.email.errors %}
+                {{ form.email(class="form-control form-control-lg is-invalid rinput") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.email(class="form-control form-control-lg rinput") }}
+                {% endif %}
+
+            </div>
+            <div class="form-group rblock">
+                {{ form.password.label(class="form-control-label rlabel") }}
+                {% if form.password.errors %}
+                {{ form.password(class="form-control form-control-lg is-invalid rinput") }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.password(class="form-control form-control-lg rinput") }}
+                {% endif %}
+
+            </div>
+            <div class="form-group rblock">
+                {{ form.confirm_password.label(class="form-control-label rlabel") }}
+                {% if form.confirm_password.errors %}
+                {{ form.confirm_password(class="form-control form-control-lg is-invalid rinput") }}
+                <div class="invalid-feedback">
+                    {% for error in form.confirm_password.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.confirm_password(class="form-control form-control-lg rinput") }}
+                {% endif %}
+            </div>
+            <div class="form-group rblock">
+                {{ form.city.label(class="form-control-label rlabel") }}
+                {% if form.city.errors %}
+                {{ form.city(class="form-control form-control-lg is-invalid rinput") }}
+                <div class="invalid-feedback">
+                    {% for error in form.city.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.city(class="form-control form-control-lg rinput") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group btn">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+<div class="border-top pt- 1mx-auto">
+    <small class="text-muted">
+        Already Have an Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+    </small>
+</div>
+<!--</body>-->
+<!--</html>-->
+{% endblock content %}

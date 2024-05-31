@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .rmain{
+        display:flex;
+        padding:0 42px 23px;
+        margin:0 0 0 320px;
+        width:100px;
+    }
+    legend{
+        text-align:center;
+        font-size:1.87rem;
+        font-family:cursive;
+        color:#e2ff3b;
+    }
+    .rentity{
+        padding:4px 60px 32px 60px;
+        margin:3px 0 40px 0 ;
+        height:300px;
+        border:2px solid #081446;
+    }
+    .rblock{
+        height: 66px;
+        margin:10px 22px 7px 18px;
+    }
+    .rlabel{
+        font-size:1.47rem;
+        font-weight:600;
+        display:inline;
+        width:10.75rem;
+    }
+    .rinput{
+        height:1.75rem;
+        display:block;
+        width:20.75rem;c
+    }
+    .btn{
+        text-align:center;
+        margin:-16px 0 5px 0;
+        background-color:#9e6edd;
+        box-shadow: 0 10px 10px 0px hsla(0, 0%, 0%, 0);
+        border:none;
+        font-family:cursive;
+        color:white;
+        font-size:1.25rem;
+    }
+    small {
+        text-align:center;
+        border:none;
+        margin:-10px 20px 20px 450px;
+        color:#e2ff3b;
+        background:none;
+        font-size:1.25rem;
+    }
+    .fg a{
+        text-align:center;
+        border:none;
+        margin:-10px 20px -20px -270px;
+        color:#081446;
+        text-decoration:none;
+        background:none;
+        font-size:1.15rem;
+    }
+    .btn-outline-info {
+        color: #ffffff;
+        border-color:#9e6edd;
+        background-color:#9e6edd;
+    }
+    .btn-outline-info.disabled,
+    .btn-outline-info:disabled {
+         color: #17a2b8;
+    }
+    .btn-outline-info:hover {
+        color: #fff;
+        background-color: #9e6edd;
+        border-color: #9e6edd;
+    }
+    .invalid-feedback {
+    <!--    display: none;-->
+        width: 100%;
+        margin-top: .25rem;
+        font-size: 80%;
+        color: #dc3545;
+    }
+</style>
+<div class="content-section rmain">
+    <form method="POST" action="" class="needs-validation" novalidate>
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group rentity">
+            <legend class="border-botton mb-4">Log In</legend>
+            <div class="form-group rblock">
+                {{ form.email.label(class="form-control-label rlabel") }}
+                {% if form.email.errors %}
+                {{ form.email(class="form-control form-control-lg is-invalid rinput") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.email(class="form-control form-control-lg rinput") }}
+                {% endif %}
+            </div>
+            <div class="form-group rblock">
+                {{ form.password.label(class="form-control-label rlabel") }}
+                {% if form.password.errors %}
+                {{ form.password(class="form-control form-control-lg is-invalid rinput") }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.password(class="form-control form-control-lg rinput") }}
+                {% endif %}
+            </div>
+            <div class="form-check rblock">
+                {{ form.remember(class="form-check-input ") }}
+                {{ form.remember.label(class="form-check-label ") }}
+            </div>
+        </fieldset>
+        <div class="form-group btn">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+<!--        <small class="text-muted ml-2 fg">-->
+<!--        <a href="#">Forgot Password</a>-->
+<!--        </small>-->
+    </form>
+</div>
+<div >
+    <small class="text-muted">
+        Need an Account? <a href="{{ url_for('register') }}">Sign Up Now</a>
+    </small>
+</div>
+{% endblock content %}
+<!--</body>-->
+<!--</html>-->

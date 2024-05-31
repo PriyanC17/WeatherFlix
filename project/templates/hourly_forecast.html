@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="weather-data">
+        <div class="days-forecast">
+            <h2>Hourly Forecast</h2>
+            <ul class="weather-cards">
+                {% if weather_for_5 %}
+                {% for forecast in weather_for_5 %}
+                <li class="card">
+                    <img src="https://openweathermap.org/img/wn/{{ forecast.icon }}.png" alt="Weather Icon" />
+                    <h3>{{ forecast.timestamp }}</h3>
+                    <h6>{{ forecast.description }}</h6>
+                    <h6>Temperature: {{ forecast.temperature }}°C</h6>
+                    <h6>feels like: {{ forecast.feels_like }}°C</h6>
+                    <h6>Wind: {{ forecast.wind }} m/s</h6>
+                    <h6>Humidity: {{ forecast.humidity }}%</h6>
+                </li>
+                {% endfor %}
+                {% else %}
+                <li>No forecast data available</li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

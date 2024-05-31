@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="weather-data">
+        <div class="current-weather">
+            <div class="details">
+                <h2>{{ weather_data.city }} ( {{ weather_data.date.strftime("%d-%b-%y %H:%M:%S") }} )</h2>
+                <h6>{{ weather_data.description }}</h6>
+                <h6>Temperature: {{ weather_data.temperature }}°C</h6>
+                <h6>feels like: {{ weather_data.feels_like }}°C</h6>
+                <h6>Wind: {{ weather_data.wind }} m/s</h6>
+                <h6>Humidity: {{ weather_data.humidity }}%</h6>
+            </div>
+        </div>
+        <div class="days-forecast">
+            <h2>5-Day Forecast</h2>
+            <ul class="weather-cards">
+                {% if weather_for_5 %}
+                {% for forecast in weather_for_5 %}
+                <li class="card">
+                    <img src="https://openweathermap.org/img/wn/{{ forecast.icon }}.png" alt="Weather Icon" />
+                    <h3>{{ forecast.timestamp }}</h3>
+                    <h6>{{ forecast.description }}</h6>
+                    <h6>Temperature: {{ forecast.temperature }}°C</h6>
+                    <h6>feels like: {{ forecast.feels_like }}°C</h6>
+                    <h6>Wind: {{ forecast.wind }} m/s</h6>
+                    <h6>Humidity: {{ forecast.humidity }}%</h6>
+                </li>
+                {% endfor %}
+                {% else %}
+                <li>No forecast data available</li>
+                {% endif %}
+            </ul>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

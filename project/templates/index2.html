@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+<script src="{{url_for('static',filename='script2.js')}}" defer></script>
+
+<div class="container">
+
+    <div class="weather-input">
+        <h3>Enter City Name</h3>
+        <!--        <form>-->
+        <input class="city-input" type="text" id="city" placeholder="E.g., Gandhinagar, Rajkot , Surat">
+        <!--        <button class="search-btn" onclick="fetchWeather()">Search</button>-->
+        <button id="searchButton" class="search-btn">Search</button>
+        <div class="separator"></div>
+        <button class="location-btn">Use Current Location</button>
+        <!--        </form>-->
+
+    </div>
+    <div class="weather-data">
+        <div class="current-weather">
+            <div class="weather-details" id="weather-details">
+                <!-- Weather details will be displayed here -->
+                    <h3>( ______ )</h3>
+                    <h6>Temp: __°C</h6>
+                    <h6>Wind: __ m/s</h6>
+                    <h6>Humidity: __%</h6>
+            </div>
+        </div>
+        <div class="days-forecast">
+            <h2>5-Day Forecast</h2>
+            <ul class="weather-cards">
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temp: __°C</h6>
+                    <h6>Wind: __ m/s</h6>
+                    <h6>Humidity: __%</h6>
+                </li>
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temp: __°C</h6>
+                    <h6>Wind: __ m/s</h6>
+                    <h6>Humidity: __%</h6>
+                </li>
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temp: __°C</h6>
+                    <h6>Wind: __ m/s</h6>
+                    <h6>Humidity: __%</h6>
+                </li>
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temp: __°C</h6>
+                    <h6>Wind: __ m/s</h6>
+                    <h6>Humidity: __%</h6>
+                </li>
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temp: __°C</h6>
+                    <h6>Wind: __ m/s</h6>
+                    <h6>Humidity: __%</h6>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

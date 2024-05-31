@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<style>
+
+     .map-container {
+        position: absolute;
+        margin: 20px;
+        padding:10px 20px 40px 70px;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: center;
+     }
+
+    .map-item {
+        margin: 10px; /* Adjust as needed */
+        background-color: #f0f0f0; /* Default background color */
+        border:3px solid #9e6edd;
+        transition: all 0.7s ease;
+        box-sizing: border-box;
+         height: 475px;
+         width: 790px;
+        text-align: center;
+     }
+    .map-item:hover {
+<!--        height: 60vh;-->
+<!--        width: 100vh;-->
+        z-index: 1;
+    }
+    .map-item:nth-child(odd) {
+        background-color: #e0e0e0; /* Alternate background color for odd elements */
+        border:2px solid #9e6edd;
+    }
+    .btn_main{
+        position: absolute;
+        bottom : 150px;
+        right : 190px;
+        border : 2px solid #77adda;
+        border-radius:12px;
+
+    }
+    .bttn{
+        text-decoration : none;
+        padding:17px;
+<!--        border : 2px solid #77adda;-->
+        background: #fff;
+        display : block;
+        border-radius:12px;
+    }
+    .bttn:hover{
+        color : white;
+        background: #9e6edd;
+        border : 2px solid;
+        border-radius:12px;
+    }
+
+</style>
+<!-- Pagination links -->
+<div class="btn_main">
+<!--    {% if page > 1 %}-->
+<!--        <a href="?page={{ page - 1 }}">Previous</a>-->
+<!--    {% endif %}-->
+
+<!--    {% if page < total_pages %}-->
+<!--        <a href="?page={{ page + 1 }}">Next</a>-->
+<!--    {% endif %}-->
+
+    {% for page_num in range(0,total_pages+1) %}
+        {% if page_num %}
+            {% if page == page_num %}
+                 <a class="bttn btn btn-info mb-4" href="{{url_for('display_maps',page = page_num) }}">
+                {{ name[page_num-1] }}
+                </a>
+            {% else %}
+                <a class="bttn btn btn-outline-info mb-4" href="{{url_for('display_maps',page = page_num) }}">
+                {{ name[page_num-1] }}
+                </a>
+            {% endif %}
+        {% else %}
+
+        {% endif %}
+    {% endfor %}
+</div>
+<div class="map-container">
+    {% for map_html in maps %}
+    <div class="map-item">
+        {{ map_html|safe }}
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
