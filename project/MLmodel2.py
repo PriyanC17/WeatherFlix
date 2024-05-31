@@ -3,8 +3,8 @@ import pickle
 import pandas as pd
 from sklearn.linear_model import Ridge
 
-weather = pd.read_csv("C:\\Users\\BAPS\\PycharmProjects\\WeatherFlix\\venv\\WFlix\\project\\IndianWeatherRepository_2.csv",index_col="location_name")
-# "C:\\Users\\abc\\Desktop\\WeatherFlix\\myenv\\WFlix\\project\\IndianWeatherRepository_2.csv"
+weather = pd.read_csv("IndianWeatherRepository_2.csv",index_col="location_name")
+
 null_pct = weather.isnull().sum() / weather.shape[0]
 
 valid_columns = weather.columns[null_pct < 0.05]
