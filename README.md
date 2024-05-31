@@ -13,7 +13,7 @@ The Weather Forecast Application is a web-based tool that provides users with up
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript (React.js)
+- **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Python (Flask)
 - **Weather API:** Utilizes a third-party weather API for real-time weather data.
 - **Geolocation API:** Retrieves user location for accurate weather forecasts.
