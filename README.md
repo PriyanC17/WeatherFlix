@@ -1,5 +1,4 @@
 # WeatherFlix
-
 ## Overview
 
 The Weather Forecast Application is a web-based tool that provides users with up-to-date weather information for their location. It offers detailed forecasts, including temperature, humidity, wind speed, and precipitation chances, helping users plan their activities accordingly.
