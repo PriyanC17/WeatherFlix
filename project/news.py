@@ -1,7 +1,7 @@
 from newsapi import NewsApiClient
 import requests
 
-newsapi = NewsApiClient(api_key='2205442c75e0447d81857465256695a0')
+newsapi = NewsApiClient(api_key='Your API Key')
 
 def get_sources_and_domains():
     all_sources = newsapi.get_sources()['sources']
@@ -24,8 +24,6 @@ def get_sources_and_domains():
         # print(domain)
         sources.append(id)
         domains.append(domain)
-    # Finally, it joins the elements of the sources list into a comma - separated string and assigns it to the variable sources.
-    # Similarly, it joins the elements of the domains list into a comma - separated string and assigns it to the variable domain
     sources = ", ".join(sources)
     domains = ", ".join(domains)
     # print(all_sources)
