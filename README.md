@@ -7,7 +7,7 @@ The Weather Forecast Application is a web-based tool that provides users with up
 
 - **Current Weather:** Displays current weather conditions, including temperature, humidity, wind speed, and precipitation.
 - **Hourly Forecast:** Provides an hourly breakdown of weather conditions for the next 24 hours.
-- **Daily Forecast:** Offers a 7-day forecast with detailed weather predictions.
+- **Daily Forecast:** Offers a 5-day forecast with detailed weather predictions.
 - **Location-Based:** Automatically detects the user's location or allows manual location input.
 - **Responsive Design:** Ensures seamless user experience across various devices and screen sizes.
 
