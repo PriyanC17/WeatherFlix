@@ -94,14 +94,11 @@ def send_notification(user_city):
     notification.notify(
         title=f"Weather in {user_city}",
         message=f"Temperature: {weather_data['temperature']}°C, Humidity: {weather_data['humidity']}%, Condition: {weather_data['description']}",
-        app_icon="C:\\Users\\BAPS\\Downloads\\rainy-weather.ico",
+        app_icon="rainy-weather.ico",
         timeout=10
     )
 
 def get_weather_data1(city, predictions, weather):
-    # location_name=city
-    # city_predictions = predictions.loc[city]
-    # current_time = str(datetime.utcnow() + timedelta(hours=5, minutes=30))
     wind = predictions.loc[city,'prediction_target_wind_mph'][0]
     temperature = predictions.loc[city,'prediction_target_temperature_celsius'][0]
     humidity = predictions.loc[city,'prediction_target_humidity'][0]
@@ -171,7 +168,7 @@ def hourly_forecast():
             flash('Weather information not available for this city.', 'warning')
             return redirect(url_for('home'))
 
-weather = pd.read_csv("C:\\Users\\BAPS\\PycharmProjects\\WeatherFlix\\venv\\WFlix\\project\\IndianWeatherRepository_2.csv",
+weather = pd.read_csv("IndianWeatherRepository_2.csv",
                       index_col="location_name")
 from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
