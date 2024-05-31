@@ -4,7 +4,7 @@ const locationButton = document.querySelector(".location-btn");
 const currentWeatherDiv = document.querySelector(".current-weather");
 const weatherCardsDiv = document.querySelector(".weather-cards");
 
-const API_KEY = "0c06b84562efff52297a715069dba2ff"; // API key for OpenWeatherMap API
+const API_KEY = "Your API Key"; // API key for OpenWeatherMap API
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
