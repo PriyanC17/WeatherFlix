@@ -1,7 +1,7 @@
 import pandas as pd
 import pickle
 
-weather = pd.read_csv("C:\\Users\\BAPS\\PycharmProjects\\WeatherFlix\\venv\\WFlix\\project\\IndianWeatherRepository_2.csv",
+weather = pd.read_csv("IndianWeatherRepository_2.csv",
                       index_col="location_name")
 
 null_pct = weather.isnull().sum() / weather.shape[0]
