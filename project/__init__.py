@@ -4,8 +4,8 @@ from flask_login import LoginManager
 db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = '3aeeaa7191e55d0f958c67a7a684774c'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:\\Users\\BAPS\\PyCharmProjects\\WeatherFlix\\venv\\WFlix/site.db'
+    app.config['SECRET_KEY'] = 'Your API Key'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'ite.db'
     db.init_app(app)
     # bcrypt = Bcrypt(app)
 
