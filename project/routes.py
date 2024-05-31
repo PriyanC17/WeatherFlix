@@ -26,8 +26,7 @@ def home():
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
-    # In case user has registered no need of register page,
-    # so when user clicks register it redirects to home page
+    # In case user has registered no need of register page, so when user clicks register it redirects to home page
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
@@ -43,9 +42,7 @@ def register():
 
 
 def get_weather_data(city):
-    # API_key = "518a96eef01008d5b719fc4371b50bdc"
-    API_key = "7cb1f7de7481335e10d504a4dc2aa82c"
-    # API_key = "cb828452fbdeabf9e4880933d0f204ca"
+    API_key = "Your API Key"
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}&units=metric"
 
     response = requests.get(url).json()
@@ -67,7 +64,7 @@ def get_weather_data(city):
         return None
 
 def weather_for_5_days(city):
-    API_key = "7cb1f7de7481335e10d504a4dc2aa82c"
+    API_key = "Your API Key"
     url_1 = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_key}&units=metric"
     data = requests.get(url_1).json()
     forecast_data = []
@@ -222,7 +219,7 @@ def logout():
 
 @app.route("/maps")
 def display_maps():
-    API_KEY = '7cb1f7de7481335e10d504a4dc2aa82c'
+    API_KEY = 'Your API Key'
 
     m1 = folium.Map(location=[0, 0], zoom_start=2)
     z = 2
